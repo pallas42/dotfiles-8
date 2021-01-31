@@ -14,7 +14,7 @@
       tags: [deps, homebrew, osx]
       vars:
         - homebrew_use_brewfile: yes
-        - homebrew_brewfile_dir: "./roles/osx/tasks/"
+        - homebrew_brewfile_dir: "{{ inventory_dir | dirname }}"
 
     - role: osx
       tags: [osx]
