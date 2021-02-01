@@ -17,12 +17,11 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 echo "Installing ansible galaxies"
-ansible-galaxy install -r requirements.yml
-
+ansible-galaxy install -r provision/requirements.yml
 
 echo "Running ansible playbook for $OSTYPE"
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    ansible-playbook -i inventory osx.yml -K
+    ansible-playbook -i provision/inventory provision/osx.yml -K
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    ansible-playbook -i inventory archlinux.yml -K
+    ansible-playbook -i provision/inventory provision/archlinux.yml -K
 fi
