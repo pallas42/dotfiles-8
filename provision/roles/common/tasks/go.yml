@@ -48,7 +48,7 @@
   register: result
   until: result.finished
   delay: 10
-  retries: 10
+  retries: 20
   with_items:
     - "{{ gitmux_result }}"
     - "{{ golsp_result }}"

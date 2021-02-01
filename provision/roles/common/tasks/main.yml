@@ -75,8 +75,8 @@
     jid: "{{ item.ansible_job_id }}"
   register: result
   until: result.finished
-  delay: 5
-  retries: 10
+  delay: 10
+  retries: 20
   with_items:
     - "{{ zplug_result }}"
     - "{{ tpm_result }}"
